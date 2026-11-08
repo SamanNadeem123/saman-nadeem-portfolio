@@ -1,0 +1,22 @@
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+@tailwind base; @tailwind components; @tailwind utilities;
+html { scroll-behavior: smooth; }
+body { @apply bg-void text-soft font-sans antialiased overflow-x-hidden; }
+h1,h2,h3 { @apply font-display; }
+:focus-visible { outline: 2px solid #00CFFF; outline-offset: 3px; border-radius: 6px; }
+.glass { background: rgba(17,20,42,.55); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(233,234,244,.1); }
+.glow { box-shadow: 0 0 30px -8px rgba(121,85,255,.55); }
+.mono { @apply font-mono text-xs uppercase tracking-widest text-electric; }
+.btn { @apply inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition active:scale-95; }
+.btn-primary { @apply btn bg-neon text-white hover:bg-[#8d6dff] glow; }
+.btn-ghost { @apply btn border border-soft/20 text-soft hover:border-electric hover:text-electric; }
+.chip { @apply rounded-full border border-soft/15 bg-navy/60 px-3 py-1 font-mono text-xs text-soft/90; }
+.section { @apply mx-auto max-w-6xl px-5 py-24 md:py-32; }
+.grid-bg { background-image: linear-gradient(rgba(233,234,244,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(233,234,244,.04) 1px, transparent 1px); background-size: 48px 48px; }
+.fallback-planet { background: radial-gradient(circle at 35% 30%, #00CFFF 0%, #7955FF 40%, #11142A 75%); border-radius: 9999px; box-shadow: 0 0 120px rgba(121,85,255,.5); animation: float 6s ease-in-out infinite; }
+@keyframes float { 50% { transform: translateY(-14px); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } }
+.sl-dot { animation: slmove 3.2s ease-in-out infinite; }
+@keyframes slmove { 0%,100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
